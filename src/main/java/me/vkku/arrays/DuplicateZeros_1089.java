@@ -47,8 +47,7 @@ public class DuplicateZeros_1089 {
         arr[right - 1] = 0;
         right -= 2;
       } else {
-        arr[right] = arr[i];
-        right--;
+        arr[right--] = arr[i];
       }
     }
 
