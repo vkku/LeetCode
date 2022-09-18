@@ -1,6 +1,7 @@
 package me.vkku.arrays;
 
 import org.junit.jupiter.api.Test;
+
 /*
 https://leetcode.com/problems/remove-element/
 Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed.
@@ -38,9 +39,24 @@ public class RemoveElement_27 {
   }
 
   @Test
+  public int removeElement_optimized(int[] nums, int val) {
+    int i = 0;
+    int j = nums.length - 1;
+    while (i <= j) {
+      if (nums[i] == val) {
+        nums[i] = nums[j];
+        j--;
+      } else {
+        i++;
+      }
+    }
+    return j + 1;
+  }
+
+  @Test
   public void driver() {
     int[] nums = {0, 1, 2, 2, 3, 0, 4, 2};
     int val = 2;
-    removeElement(nums, val);
+    removeElement_optimized(nums, val);
   }
 }
