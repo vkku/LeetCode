@@ -58,9 +58,25 @@ public class RemoveDuplicates_26 {
   }
 
   @Test
+  public int fastestFingersFirst(int[] nums){
+    int fittingPosition = 1, current = nums[0], count = 1, size = nums.length;
+    for(int j = 1 ; j < size ; j++){
+      if(nums[j] ==  current){
+        continue;
+      }
+      else{
+        current = nums[j];
+        nums[fittingPosition++] = current;
+        count++;
+      }
+    }
+    return count;
+  }
+
+  @Test
   public void driver(){
     int[] nums = {0,0,1,1,1,2,2,3,3,4};
-    cleanApproach(nums);
+    fastestFingersFirst(nums);
   }
 
 }
