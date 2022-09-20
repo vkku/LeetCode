@@ -74,9 +74,20 @@ public class RemoveDuplicates_26 {
   }
 
   @Test
+  public int fastest(int[] nums){
+    int slow = 1, size = nums.length;
+    for(int fast = 1 ; fast < size ; fast++){
+      if(nums[fast - 1] != nums[fast]){
+        nums[slow++] = nums[fast];
+      }
+    }
+    return slow;
+  }
+
+  @Test
   public void driver(){
     int[] nums = {0,0,1,1,1,2,2,3,3,4};
-    fastestFingersFirst(nums);
+    fastest(nums);
   }
 
 }
