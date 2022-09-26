@@ -27,8 +27,6 @@ public class ReplaceWithGreatestOnRight_1299 {
         int replaceMax = arr[i];
         arr[i] = max;
         max = replaceMax;
-      } else {
-        arr[i] = max;
       }
     }
     arr[size] = -1;
@@ -36,9 +34,29 @@ public class ReplaceWithGreatestOnRight_1299 {
   }
 
   @Test
+  public int[] simpleAndClean(int[] arr) {
+    int size = arr.length - 1, max = arr[size];
+    for (int i = size; i >= 0; i--) {
+      int replaceMax = arr[i];
+      arr[i] = max;
+      max = Math.max(replaceMax, max);
+    }
+    arr[size] = -1;
+    return arr;
+  }
+
+  @Test
+  public int[] fastest(int[] arr) {
+    for(int i = arr.length-1, max = -1 ; i >= 0 ; i--){
+      max = Math.max(arr[i], arr[i] = max);
+    }
+    return arr;
+  }
+
+  @Test
   public void driver() {
     int[] arr = {17, 18, 5, 4, 6, 1};
-    replaceElements(arr);
+    fastest(arr);
   }
 
 
