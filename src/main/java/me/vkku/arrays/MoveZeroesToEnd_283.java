@@ -44,8 +44,8 @@ public class MoveZeroesToEnd_283 {
 
   @Test
   public void driver() {
-    int[] arr = {0, 1, 0, 3, 12};
-    //int[] arr = {0, 0, 4, 0, 0, 4};
+    //int[] arr = {0, 1, 0, 3, 12};
+    int[] arr = {0, 0, 4, 0, 0, 4};
     fastest(arr);
   }
 
