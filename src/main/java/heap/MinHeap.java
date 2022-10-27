@@ -42,7 +42,6 @@ public class MinHeap {
   }
 
   public int pop(){
-    realSize--;
     if(realSize < 1){
       System.out.println("ERROR!!! No elements to delete");
       realSize++;
@@ -50,6 +49,7 @@ public class MinHeap {
     }
     int removedElement = minHeap[1];
     minHeap[1] = minHeap[realSize];
+    realSize--;
     int index = 1;
     while(index <= realSize/2){
       int leftChild = index * 2;
