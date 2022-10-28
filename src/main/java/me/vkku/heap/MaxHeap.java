@@ -1,4 +1,4 @@
-package heap;
+package me.vkku.heap;
 
 public class MaxHeap {
 
