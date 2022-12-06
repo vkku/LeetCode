@@ -37,7 +37,6 @@ public class SquaresSortedArray_977 {
       }
       resultsIndex--;
     }
-    Arrays.parallelSort(resultArr);
     return resultArr;
   }
 

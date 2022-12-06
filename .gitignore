@@ -1,2 +1,6 @@
 /.idea/
 /target/
+.git
+*.sample
+/.git 1.26.28 AM/
+/leet.iml
