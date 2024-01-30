@@ -1,12 +1,8 @@
 package me.vkku.arrays;
-
-import com.sun.tools.javac.util.ArrayUtils;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.stream.Collectors;
+
 import org.junit.jupiter.api.Test;
-import sun.security.util.ArrayUtil;
 
 /*
 https://leetcode.com/problems/check-if-n-and-its-double-exist/
@@ -27,7 +23,7 @@ Input: arr = [3,1,7,11]
 Output: false
 Explanation: There is no i and j that satisfy the conditions.
  */
-public class NumberAndDouble_1346 {
+public class numberAndDouble1346 {
 
   @Test
   public boolean checkIfExist(int[] arr) {
