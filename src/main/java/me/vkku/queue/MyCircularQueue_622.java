@@ -2,7 +2,7 @@ package me.vkku.queue;
 
 import java.util.ArrayList;
 
-class MyCircularQueue {
+class MyCircularQueue_622 {
 
   int front = 0;
   int rear = 0;
@@ -10,7 +10,7 @@ class MyCircularQueue {
   int maxSize = 0;
   ArrayList<Integer> circularQueue;
 
-  public MyCircularQueue(int k) {
+  public MyCircularQueue_622(int k) {
     maxSize = k;
     circularQueue = new ArrayList<Integer>(k);
   }
