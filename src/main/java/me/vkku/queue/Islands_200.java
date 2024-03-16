@@ -33,13 +33,13 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
 
-class Islands_200 {
+class Islands200 {
     public int numIslands(char[][] grid) {
-        int row = grid[0].length - 1;
-        int col = grid.length - 1;
+        int row = grid[0].length;
+        int col = grid.length;
         int islands = 0;
-        for(int i = 0 ; i < row ; i++){
-            for(int j = 0 ; j < col ; j++){
+        for(int i = 0 ; i < col ; i++){
+            for(int j = 0 ; j < row ; j++){
                 if(grid[i][j] == '1') {
                     islands++;
                     bfs(grid, i, j);
@@ -58,10 +58,10 @@ class Islands_200 {
             for(int[] d : dir){
                 int row = current[0] + d[0];
                 int col = current[1] + d[1];
-                if(row >= 0 &&
-                        row < grid[0].length - 1 &&
-                        col >= 0 &&
-                        col < grid.length - 1 &&
+                if(col >= 0 &&
+                        col < grid[0].length &&
+                        row >= 0 &&
+                        row < grid.length &&
                         grid[row][col] == '1'){
                     queue.add(new int[]{row, col});
                     grid[row][col] = '0';
