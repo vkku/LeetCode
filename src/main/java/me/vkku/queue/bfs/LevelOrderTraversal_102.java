@@ -1,5 +1,7 @@
 package me.vkku.queue.bfs;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -38,5 +40,23 @@ public class LevelOrderTraversal_102 {
             this.left = left;
             this.right = right;
         }
+    }
+
+    @Test
+    public void driver(){
+        //[3,9,20,null,null,15,7]
+        TreeNode tree = new TreeNode(3);
+        TreeNode tree1 = new TreeNode(9) ;
+        TreeNode tree2 = new TreeNode(20);
+        TreeNode tree5 = new TreeNode(15);
+        TreeNode tree6 = new TreeNode(7);
+        tree.left = tree1;
+        tree.right = tree2;
+        tree1.left = null;
+        tree1.right = null;
+        tree2.left = tree5;
+        tree2.right = tree6;
+        LevelOrderTraversal_102 levelOrderTraversal = new LevelOrderTraversal_102();
+        System.out.println(levelOrderTraversal.levelOrder(tree));
     }
 }
