@@ -1,4 +1,4 @@
-package me.vkku.queue;
+package me.vkku.queue.bfs;
 /*
 Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.
 
@@ -28,12 +28,10 @@ Output: 3
 
 import org.junit.jupiter.api.Test;
 
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Set;
 
-class Islands200 {
+class Islands_200 {
     public int numIslands(char[][] grid) {
         int row = grid[0].length;
         int col = grid.length;
