@@ -12,6 +12,20 @@ import org.junit.jupiter.api.Test;
     Example 2:
     Input: head = [1,2]
     Output: false
+
+    # Intuition
+    <!-- Describe your first thoughts on how to solve this problem. -->
+    Two pointer
+    # Approach
+    <!-- Describe your approach to solving the problem. -->
+    Reverse linked list from middle to last and compare two portions of list i.e. [Front -> Middle] and [Last -> Middle] if matches, palindrome
+    # Complexity
+    - Time complexity:
+    <!-- Add your time complexity here, e.g. $$O(n)$$ -->
+    O(n)
+    - Space complexity:
+    <!-- Add your space complexity here, e.g. $$O(n)$$ -->
+    O(1)
  */
 public class PalindromeSinglyLL_234 {
     public boolean isPalindrome(ListNode head){
