@@ -22,11 +22,15 @@ public class Demo {
     }
 
     public static void main(String[] args) {
+        //Comparator
         ArrayList<Person> persons = new ArrayList<>();
         Collections.sort(persons, new PersonComparator());
         Collections.sort(persons, Comparator.comparing(Person::getAge)
                 .thenComparing((Person::getName)));
         Collections.sort(persons, (Person p1, Person p2) -> {return Integer.compare(p1.age, p2.age);});
+        //Comparable
+        ArrayList<Player> playerList = new ArrayList<>();
+        Collections.sort(playerList);
 
     }
 
