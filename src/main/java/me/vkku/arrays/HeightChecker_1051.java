@@ -23,13 +23,12 @@ Indices 2, 4, and 5 do not match.
  */
 public class HeightChecker_1051 {
 
-  @Test
   public int heightChecker(int[] arr) {
     int[] heightFreqArr = new int[101];
     int head = 0, count = 0;
-    for(int i = 0 ; i < arr.length ; i++){
-      heightFreqArr[arr[i]]++;
-    }
+      for (int j : arr) {
+          heightFreqArr[j]++;
+      }
     for(int i = 0 ; i <= 100 ; i++){
       if(heightFreqArr[i] != 0){
         while(heightFreqArr[i]-- > 0){
@@ -42,19 +41,18 @@ public class HeightChecker_1051 {
     return count;
   }
 
-  @Test
-  public int faster(int[] arr){
+  public int faster(int[] heights){
     int[] heightFreqArr = new int[101];
     int head = 0, count = 0;
-    for(int i = 0 ; i < arr.length ; i++){
-      heightFreqArr[arr[i]]++;
-    }
+      for (int j : heights) {
+          heightFreqArr[j]++;
+      }
     int curr = 0;
-    for(int i = 0 ; i < arr.length ; i++){
-      while(heightFreqArr[curr] == 0) curr++;
-      if(curr != arr[i]) count++;
-      heightFreqArr[curr]--;
-    }
+      for (int j : heights) {
+          while (heightFreqArr[curr] == 0) curr++;
+          if (curr != j) count++;
+          heightFreqArr[curr]--;
+      }
     return count;
   }
 
@@ -62,6 +60,8 @@ public class HeightChecker_1051 {
   public void driver(){
     //int[] arr = {1,1,4,2,1,3};
     int[] arr = {5,1,2,3,4};
-    faster(arr);
+    System.out.println("Height Checker : " + heightChecker(arr));
+    System.out.println("Faster : " + faster(arr));
+
   }
 }
