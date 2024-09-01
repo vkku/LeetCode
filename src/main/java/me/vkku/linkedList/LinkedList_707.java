@@ -1,8 +1,7 @@
-package me.vkku.linked_list;
+package me.vkku.linkedList;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.experimental.Accessors;
 
 public class LinkedList_707 {
   Node node, current, head, tail;

@@ -1,4 +1,4 @@
-package me.vkku.linked_list;
+package me.vkku.linkedList;
 
 import org.junit.jupiter.api.Test;
 
