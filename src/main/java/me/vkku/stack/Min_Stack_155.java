@@ -1,10 +1,12 @@
 package me.vkku.stack;
 
+import java.util.ArrayList;
+
 public class Min_Stack_155 {
     ArrayList<Integer> stack;
     int size = 0;
     int min = Integer.MAX_VALUE;
-    public MinStack() {
+    Min_Stack_155() {
         stack = new ArrayList<>();
     }
 
