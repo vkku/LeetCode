@@ -26,13 +26,17 @@ import java.util.Stack;
 
     <!-- Describe your first thoughts on how to solve this problem. -->
     Since parentheses occurs in pairs, it's wise approach to use stack.
+
     # Approach
     <!-- Describe your approach to solving the problem. -->
-    Push opening parentheses into stack and pop when closing parentheses is encountered, this way if stack is empty at the end of operation it implies string has balanced parentheses.
+    Push opening parentheses into stack and pop when closing parentheses is encountered,
+    this way if stack is empty at the end of operation it implies string has balanced parentheses.
+
     # Complexity
     - Time complexity:
     <!-- Add your time complexity here, e.g. $$O(n)$$ -->
     O(n)
+
     - Space complexity:
     <!-- Add your space complexity here, e.g. $$O(n)$$ -->
     O(n)
