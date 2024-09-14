@@ -3,8 +3,6 @@ package me.vkku.stack;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Daily_Temperature_739 {
     public int[] dailyTemperatures(int[] temperatures) {
