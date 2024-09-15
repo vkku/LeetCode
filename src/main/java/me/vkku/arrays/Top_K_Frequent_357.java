@@ -45,7 +45,7 @@ import java.util.*;
     O(n + n) = O(n)
  */
 
-public class Top_K_Frequent_347 {
+public class Top_K_Frequent_357 {
     public int[] topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> frequencyMap = new HashMap<>();
         Map<Integer, List<Integer>> bucketSort = new HashMap<>();
@@ -77,7 +77,7 @@ public class Top_K_Frequent_347 {
 
     @Test
     public void driver(){
-        Top_K_Frequent_347 tkf = new Top_K_Frequent_347();
+        Top_K_Frequent_357 tkf = new Top_K_Frequent_357();
         System.out.println(Arrays.toString(tkf.topKFrequent(new int[]{1, 1, 1, 2, 2, 3}, 2)));
         System.out.println(Arrays.toString(tkf.topKFrequent(new int[]{1}, 1)));
     }
