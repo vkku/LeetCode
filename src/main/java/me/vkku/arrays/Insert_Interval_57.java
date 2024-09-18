@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,61 +14,24 @@ public class Insert_Interval_57 {
     List<int[]> result = new ArrayList<>();
     int count = 0;
     public int[][] insert(int[][] intervals, int[] newInterval) {
-        if(intervals.length > 0 && intervals[0].length > 0) {
-            int startIndex = 0;
-            int endIndex = 0;
-            boolean flag = false;
-            for (int i = 0; i < intervals.length; i++) {
-                startIndex = 0;
-                endIndex = 0;
-                int newIntervalStart = newInterval[0];
-                int newIntervalEnd = newInterval[1];
-                int currentIntervalStart = intervals[i][0];
-                int currentIntervalEnd = intervals[i][1];
-                for (int j = currentIntervalStart; j <= currentIntervalEnd; j++) {
-                    if ((j >= newIntervalStart && j <= newIntervalEnd) || (newIntervalStart < currentIntervalStart && newIntervalEnd > currentIntervalStart)) {
-                        flag = true;
-                        startIndex = Math.min(intervals[i][0], newIntervalStart);
-                        endIndex = Math.max(intervals[i][1], newIntervalEnd);
-                    } else if(j == newIntervalStart){
-                        flag = true;
-                        startIndex = intervals[i][0];
-                        endIndex = newIntervalEnd;
-                    } else if(j == newIntervalEnd){
-                        flag = true;
-                        startIndex = newIntervalStart;
-                        endIndex = intervals[i][1];
-                    } else {
-                        startIndex = currentIntervalStart;
-                        endIndex = currentIntervalEnd;
+        List<int[]> result = new ArrayList<>();
+        if(intervals.length > 1){
+            for(int i = 0 ; i < intervals.length ; i++){
+                if(newInterval[1] < intervals[i][0]){
+                    result.add(newInterval);
+                    for(int j = i ; j < intervals.length ; j++){
+                        result.add(intervals[j]);
                     }
-
-                }
-
-                //current interval is contained in previously stretched interval
-                if (count > 0 && result.get(count - 1)[0] <= startIndex && result.get(count - 1)[1] >= endIndex) {
-                    continue;
-                }
-                if (count > 0 && result.get(count - 1)[1] == startIndex) {
-                    result.get(count - 1)[1] = endIndex;
-                    continue;
-                }
-                int[] modifiedInterval = {startIndex, endIndex};
-                if (!result.contains(modifiedInterval)) {
-                    result.add(modifiedInterval);
-                    count++;
+                    return result.toArray(new int[0][]);
+                }else if(newInterval[0] > intervals[i][1]){
+                    result.add(intervals[i]);
+                }else{
+                    newInterval[0] = Math.min(intervals[i][0], newInterval[0]);
+                    newInterval[1] = Math.max(intervals[i][1], newInterval[1]);
                 }
             }
-            //if new interval is totally isolated (not touching or included)
-            if(!flag && count > 0 && startIndex > newInterval[1]){
-                result.add(newInterval);
-            }else if(!flag && count > 0 && endIndex < newInterval[0]){
-                result.add(newInterval);
-            }
         }
-        if(result.isEmpty()){
-            result.add(newInterval);
-        }
+        result.add(newInterval);
         return result.toArray(new int[0][]);
     }
 
