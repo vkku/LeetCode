@@ -3,8 +3,6 @@ package me.vkku.string;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.Collectors;
 
 public class SeniorCitizens_2678 {
     public int countSeniors(String[] details) {

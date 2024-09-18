@@ -3,8 +3,6 @@ package me.vkku.string;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class IsomorphicString_205 {
     public boolean isIsomorphic(String s, String t) {
