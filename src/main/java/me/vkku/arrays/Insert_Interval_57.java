@@ -15,7 +15,7 @@ public class Insert_Interval_57 {
     int count = 0;
     public int[][] insert(int[][] intervals, int[] newInterval) {
         List<int[]> result = new ArrayList<>();
-        if(intervals.length > 1){
+        if(intervals.length > 0 && intervals[0].length > 0){
             for(int i = 0 ; i < intervals.length ; i++){
                 if(newInterval[1] < intervals[i][0]){
                     result.add(newInterval);
@@ -49,7 +49,7 @@ public class Insert_Interval_57 {
 
         Insert_Interval_57 ik = new Insert_Interval_57();
         expected = new int[][]{{5, 7}};
-        assertEquals(Arrays.deepToString(expected), Arrays.deepToString(ik.insert(new int[][]{{}}, new int[]{5, 7})));
+        assertEquals(Arrays.deepToString(expected), Arrays.deepToString(ik.insert(new int[][]{}, new int[]{5, 7})));
 
 
         Insert_Interval_57 il = new Insert_Interval_57();
