@@ -24,8 +24,8 @@ public class KokoBananas_875 {
 
     public int timeTakenToFinishBananas(int[] piles, int rate){
         int result = 0;
-        for(int i = 0 ; i < piles.length ; i++){
-            result +=  Math.ceil((double) piles[i] / (double) rate);
+        for (int pile : piles) {
+            result += Math.ceil((double) pile / (double) rate);
         }
         return result;
     }
