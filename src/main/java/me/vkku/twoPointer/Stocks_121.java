@@ -6,25 +6,23 @@ import java.util.*;
 
 public class Stocks_121 {
     public int maxProfit(int[] prices) {
-        int left = 0;
-        int right = 1;
-        ArrayList<Integer> maxProfitArr = new ArrayList<>();
-        maxProfitArr.add(0);
-        while(right < prices.length && left < prices.length){
-            if(prices[right] - prices[left] < 0){
-                left++;
+        int profit = 0;
+        int buyRate = prices[0];
+        for(int i = 1 ; i < prices.length ; i++){
+            if(prices[i] < buyRate){
+                buyRate = prices[i];
             }else{
-                maxProfitArr.add(prices[right] - prices[left]);
-                right++;
+                profit = Math.max(profit, prices[i] - buyRate);
             }
         }
-        return Collections.max(maxProfitArr);
+        return profit;
     }
 
     @Test
     void driver(){
         Stocks_121 stocks = new Stocks_121();
-//        System.out.println("Profit is : " + stocks.maxProfit(new int[]{7,1,5,3,6,4}));
-        System.out.println("Profit is : " + stocks.maxProfit(new int[]{1}));
+        System.out.println("Profit is : " + stocks.maxProfit(new int[]{7,1,5,3,6,4})); //5
+        System.out.println("Profit is : " + stocks.maxProfit(new int[]{1})); //0
+        System.out.println("Profit is : " + stocks.maxProfit(new int[]{1, 2})); //1
     }
 }
