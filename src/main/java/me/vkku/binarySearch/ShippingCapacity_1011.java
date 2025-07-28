@@ -22,16 +22,16 @@ public class ShippingCapacity_1011 {
     }
 
     private boolean canShip(int[] weights, int size, int ships) {
-        int shipCap = 1;
-        int shipsUsed = 0;
-        for(int weight: weights){
-            if(shipCap - weight < 0){
-                shipsUsed++;
-                shipCap = size;
+        int requiredShips = 1;
+        int currentCapacity = size;
+        for(int weight : weights){
+            if(currentCapacity - weight < 0){
+                requiredShips++;
+                currentCapacity = size;
             }
-            shipCap -= weight;
+            currentCapacity -= weight;
         }
-        return shipsUsed <= ships;
+        return requiredShips <= ships;
     }
 
     @Test
