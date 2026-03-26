@@ -41,6 +41,6 @@ public class Perfect_Squares_279 {
     @Test
     public void driver(){
         Perfect_Squares_279 squares = new Perfect_Squares_279();
-        System.out.println(squares.numSquares(7168));
+        System.out.println(squares.numSquares(18));
     }
 }
